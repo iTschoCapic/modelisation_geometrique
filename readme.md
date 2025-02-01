@@ -107,7 +107,7 @@ Screenshot dans l'ordre des courbe d'Hermite, Bézier et Casteljau
 
 ## **Conclusion**
 
-Ces travaux dirigés offrent une introduction solide à la manipulation des maillages et des courbes dans Unity, en couvrant des concepts comme la subdivision, la simplification, et les courbes paramétriques.
+Merci à Corentin Le Bihan Gautier car ces travaux dirigés qui offrent une introduction à la manipulation des maillages et des courbes dans Unity, en couvrant des concepts comme la subdivision, la simplification, et les courbes paramétriques.
 
 **Suggestions :**
 - Ajouter des animations pour visualiser les processus en temps réel.
