@@ -29,8 +29,6 @@ Ce document résume les différents TDs (1 à 6) portant sur des algorithmes et 
   - Normalisation des vecteurs normaux pour garantir leur unité.
   - Comparaison du rendu avec et sans calcul de normales.
 
-**Capture d'écran suggérée :**
-Une scène avec un maillage régulièrement ombré (grâce aux normales).
 ![TD2_screenshot](./screenshots/TD2.png)
 
 ---
@@ -46,8 +44,6 @@ Une scène avec un maillage régulièrement ombré (grâce aux normales).
   - Division des cubes intersectant partiellement les sphères en cubes plus petits.
   - Vérification des intersections avec les sphères à chaque niveau de récursion pour améliorer la précision sans redondance.
 
-**Capture d'écran suggérée :**
-Un maillage avant et après subdivision, avec des différences visuelles claires.
 ![TD3_screenshot](./screenshots/TD3.png)
 
 ---
