@@ -1,116 +1,116 @@
-# Modélisation Géométrique
+# Geometric Modelling
 
-Ce document résume les différents TDs (1 à 6) portant sur des algorithmes et des implémentations liés à la géométrie et à la manipulation de maillages dans Unity.
+This document summarises the various tutorials (1 to 6) on algorithms and implementations related to geometry and mesh manipulation in Unity.
 
 ---
 
-## **TD 1 : Introduction aux Meshes**
+## TD 1: Introduction to meshes**
 
-**Objectif :** Comprendre les bases de la manipulation des maillages dans Unity.
+**Objective:** Understand the basics of mesh manipulation in Unity.
 
-- **Création de formes simples :**
-  Implémentation d’un script permettant de créer un maillage à partir de points (sommets) et de triangles.
+- **Creating simple shapes:**
+  Implement a script to create a mesh from points (vertices) and triangles.
   
-- **Points principaux :**
-  - Définition des sommets (à l’aide de `Vector3`).
-  - Définition des triangles (à l’aide d’un tableau d’indices).
-  - Application du maillage à un `MeshFilter` pour le rendre visible.
+- **Key points:**
+  - Definition of vertices (using `Vector3`).
+  - Definition of triangles (using an array of indices).
+  - Apply the mesh to a `MeshFilter` to make it visible.
 
 ![TD1_screenshot](./screenshots/TD1.png)
 
 ---
 
-## **TD 2 : Calculs de Normales**
+## **TD 2: Calculating Normals**
 
-**Objectif :** Implémenter le calcul des normales pour les maillages afin d’améliorer leur rendu.
+**Objective:** Implement the calculation of normals for meshes in order to improve their rendering.
 
-- **Détails :**
-  - Calcul des normales à partir des sommets et des triangles.
-  - Normalisation des vecteurs normaux pour garantir leur unité.
-  - Comparaison du rendu avec et sans calcul de normales.
+- **Key points:**
+  - Calculate normals from vertices and triangles.
+  - Normalisation of normal vectors to guarantee their unity.
+  - Comparison of rendering with and without calculating normals.
 
 ![TD2_screenshot](./screenshots/TD2.png)
 
 ---
 
-## **TD 3 : Division et Déformation des Meshes**
+## **TD 3: Mesh division and deformation**
 
-**Objectif :** Implémenter un algorithme de quadtree adaptatif pour la représentation volumétrique 3D de sphères en utilisant l'énumération spatiale.
+**Objective:** Implement an adaptive octree algorithm for the 3D volumetric representation of spheres using spatial enumeration.
 
-- **Exercice :** Détermination de la boîte englobante minimale pour chaque sphère à partir de son **centre** et de son **rayon**, optimisant la détection des collisions et les requêtes spatiales.
-- **Manipulations :**
-  - Itération sur un ensemble de sphères pour générer des représentations individuelles.  
-  - Approximation du volume de chaque sphère par des cubes, en calculant des intersections entre les cubes et la sphère pour des détails précis.
-  - Division des cubes intersectant partiellement les sphères en cubes plus petits.
-  - Vérification des intersections avec les sphères à chaque niveau de récursion pour améliorer la précision sans redondance.
+- **Exercise:** Determine the minimum bounding box for each sphere based on its **centre** and **radius**, optimising collision detection and spatial queries.
+- **Key points:**
+  - Iterate over a set of spheres to generate individual representations.  
+  - Approximate the volume of each sphere with cubes, calculating intersections between the cubes and the sphere for precise detail.
+  - Split cubes that partially intersect spheres into smaller cubes.
+  - Check intersections with spheres at each recursion level to improve accuracy without redundancy.
 
 ![TD3_screenshot](./screenshots/TD3.png)
 
 ---
 
-## **TD 4 : Simplification par Partitionnement**
+## **TD 4: Simplification by Partitioning**
 
-**Objectif :** Réduire le nombre de sommets d’un maillage en fusionnant ceux proches.
+**Objective:** Reduce the number of vertices in a mesh by merging nearby vertices.
 
-- **Méthode :**
-  - Construction d’une grille pour regrouper les sommets proches.
-  - Fusion des sommets dans chaque cellule en calculant leur moyenne.
-  - Mise à jour des triangles avec les nouveaux indices des sommets fusionnés.
+- **Key points:**
+  - Construct a grid to group nearby vertices.
+  - Merge the vertices in each cell by calculating their average.
+  - Update the triangles with the new indices of the merged vertices.
 
-- **Paramètres :**
-  - Taille de la cellule (contrôlant la résolution du maillage résultant).
-
----
-
-## **TD 5 : Subdivision de Courbes**
-
-### **Exercice 1 : Algorithme de Chaikin**
-
-**Objectif :** Implémenter l’algorithme de Chaikin pour lisser une courbe.
-
-- **Détails :**
-  - À chaque itération, diviser chaque segment de la courbe en deux points calculés à 25 % et 75 % entre les extrémités.
-  - Permet de générer une courbe lisse à partir d'un polygone grossier.
+- **Parameters:**
+  - Cell size (controlling the resolution of the resulting mesh).
 
 ---
 
-## **TD 6 : Courbes et Algorithmes Avancés**
+## **TD 5 : Subdivision of Curves**
 
-### **Exercice 1 : Courbes d’Hermite**
+### **Exercise 1: Chaikin algorithm**
 
-**Objectif :** Tracer des courbes d’Hermite définies par deux points et leurs tangentes.
+**Objective:** Implement the Chaikin algorithm to smooth a curve.
 
-- **Points clés :**
-  - Utilisation des coefficients Hermite pour interpoler une courbe.
-  - Interaction possible pour ajuster les tangentes en temps réel.
+- **Key points:**
+  - At each iteration, divide each segment of the curve into two points calculated at 25% and 75% between the ends.
+  - Generates a smooth curve from a coarse polygon.
 
-### **Exercice 2 : Courbes de Bézier Cubiques**
+---
 
-**Objectif :** Implémenter les courbes de Bézier à l’aide de 4 points de contrôle.
+## **TD 6: Curves and Advanced Algorithms**
 
-- **Points clés :**
-  - Calcul paramétrique utilisant les points de contrôle.
-  - Visualisation des polygones de contrôle et des segments de la courbe.
+### **Exercise 1: Hermite curves**
 
-### **Exercice 3 (Option) : Algorithme de Casteljau**
+**Objective:** Draw Hermite curves defined by two points and their tangents.
 
-**Objectif :** Générer des courbes de Bézier à partir d’un nombre quelconque de points de contrôle.
+- **Key points:**
+  - Use Hermite coefficients to interpolate a curve.
+  - Interaction possible to adjust tangents in real time.
 
-- **Détails :**
-  - Implémentation récursive de l’algorithme de Casteljau.
-  - Permet de manipuler des courbes complexes avec des interactions dynamiques.
+### **Exercise 2: Cubic Bézier curves**
 
-Screenshot dans l'ordre des courbe d'Hermite, Bézier et Casteljau
+**Objective:** Implement Bézier curves using 4 control points.
+
+- **Key points:**
+  - Parametric calculation using control points.
+  - Visualisation of control polygons and curve segments.
+
+### **Exercise 3 (Option) : Casteljau algorithm**
+
+**Objective:** Generate Bézier curves from any number of control points.
+
+- **Key points:**
+  - Recursive implementation of the Casteljau algorithm.
+  - Allows you to manipulate complex curves with dynamic interactions.
+
+Screenshot in order of Hermite, Bézier and Casteljau curves
 ![TD6_screenshot](./screenshots/TD6.png)
 
 ---
 
 ## **Conclusion**
 
-Merci à Corentin Le Bihan Gautier car ces travaux dirigés qui offrent une introduction à la manipulation des maillages et des courbes dans Unity, en couvrant des concepts comme la subdivision, la simplification, et les courbes paramétriques.
+Thanks to Corentin Le Bihan Gautier for these tutorials, which provide an introduction to manipulating meshes and curves in Unity, covering concepts such as subdivision, simplification and parametric curves.
 
-**Suggestions :**
-- Ajouter des animations pour visualiser les processus en temps réel.
-- Exporter les courbes et maillages générés pour les utiliser dans d’autres projets.
+**Suggestions:**
+- Add animations to visualise processes in real time.
+- Export the generated curves and meshes for use in other projects.
 
-**Prochaine étape :** Approfondir les shaders pour rendre les maillages encore plus réalistes.
+**Next step:** Deepen the shaders to make the meshes even more realistic.
